@@ -297,8 +297,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\FSMStatus\GameMachine\FSMMachine.cs" />
     <Compile Include="Assets\Scripts\Managers\AudionManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\BridMove.cs" />
+    <Compile Include="Assets\Scripts\Managers\BirdMove.cs" />
     <Compile Include="Assets\Scripts\Managers\GameMananager.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourcesManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
