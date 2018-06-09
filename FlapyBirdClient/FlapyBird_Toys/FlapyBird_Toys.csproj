@@ -301,8 +301,10 @@
     <Compile Include="Assets\Scripts\Managers\AudionManager.cs" />
     <Compile Include="Assets\Scripts\Managers\BirdMove.cs" />
     <Compile Include="Assets\Scripts\Managers\GameMananager.cs" />
+    <Compile Include="Assets\Scripts\Managers\GroundMove.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourcesManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\WallMove.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Textures\atlas.txt" />

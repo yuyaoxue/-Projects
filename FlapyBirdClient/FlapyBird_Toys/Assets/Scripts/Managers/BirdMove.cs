@@ -20,17 +20,19 @@ public class BirdMove : MonoBehaviour
         {
             if (boo)
             {
-                _Rigidbody2D.velocity = Vector2.up * 0.1f;
+                _Rigidbody2D.velocity = Vector2.up * 0.05f;
                 boo = false;
             }
             else
             {
-                _Rigidbody2D.velocity = Vector2.down * 0.1f;
+                _Rigidbody2D.velocity = Vector2.down * 0.05f;
                 boo = true;
             }
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            GameMananager.Instance.isStart = true;
+            _Rigidbody2D.gravityScale = 1;
             _Speed += 1;
             _Rigidbody2D.velocity = Vector2.up * _Speed;
         }
