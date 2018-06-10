@@ -297,14 +297,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Bird\BirdCollision.cs" />
+    <Compile Include="Assets\Scripts\Bird\BirdMove.cs" />
     <Compile Include="Assets\Scripts\FSMStatus\GameMachine\FSMMachine.cs" />
+    <Compile Include="Assets\Scripts\Ground\GroundMove.cs" />
     <Compile Include="Assets\Scripts\Managers\AudionManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\BirdMove.cs" />
     <Compile Include="Assets\Scripts\Managers\GameMananager.cs" />
-    <Compile Include="Assets\Scripts\Managers\GroundMove.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourcesManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\WallMove.cs" />
+    <Compile Include="Assets\Scripts\Pipe\PipeMove.cs" />
+    <Compile Include="Assets\Scripts\UI\BasePanel.cs" />
+    <Compile Include="Assets\Scripts\UI\GameOverPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\ReadyPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\StartPanel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Textures\atlas.txt" />

@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallMove : MonoBehaviour {
+public class PipeMove : MonoBehaviour {
 
-    void Start()
+    private void Init()
     {
-
-        init();
-    }
-
-    private void init()
-    {
+        index = 1;
         this.transform.localPosition = new Vector3(2,0,0);
         for (int i = 0; i < pipes.Length; i++)
         {
@@ -21,7 +16,7 @@ public class WallMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (!GameMananager.Instance.isStart)
+        if (!GameMananager.Instance.IsStart)
             return;
 
         if (gameObject.transform.localPosition.x <= (-index * width-1))
@@ -43,6 +38,17 @@ public class WallMove : MonoBehaviour {
         }
         temp.transform.localPosition = new Vector3(_endTran.localPosition.x + width, 0, 0);
         pipes[pipes.Length - 1] = temp;
+    }
+
+
+    public void StartGame()
+    {
+        Init();
+    }
+
+    public void GameOver()
+    {
+
     }
 
     private Transform _startTran;
