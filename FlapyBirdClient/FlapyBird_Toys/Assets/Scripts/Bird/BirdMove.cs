@@ -20,11 +20,7 @@ public class BirdMove : MonoBehaviour
             {
                 _Speed += 1;
                 _Rigidbody2D.velocity = Vector2.up * _Speed;
-            }
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                _Speed += 1;
-                _Rigidbody2D.velocity = Vector2.down * _Speed;
+                AudioManager.Instance.PlayAudioEffect(AudioType.Wing);
             }
             _Speed = 1;
         }
@@ -47,7 +43,7 @@ public class BirdMove : MonoBehaviour
     }
     public void Init()
     {
-        this.gameObject.transform.localPosition = Vector3.one;
+        this.gameObject.transform.localPosition = Vector3.zero;
         _Speed = 1f;
         boo = true;
     }

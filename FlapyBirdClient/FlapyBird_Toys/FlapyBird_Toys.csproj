@@ -301,7 +301,7 @@
     <Compile Include="Assets\Scripts\Bird\BirdMove.cs" />
     <Compile Include="Assets\Scripts\FSMStatus\GameMachine\FSMMachine.cs" />
     <Compile Include="Assets\Scripts\Ground\GroundMove.cs" />
-    <Compile Include="Assets\Scripts\Managers\AudionManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameMananager.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourcesManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />

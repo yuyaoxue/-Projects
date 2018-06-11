@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ResourcesManager
 {
+    private  const string AudioPath = "Sounds/";
+    private const string UIPath = "UI/";
     private static ResourcesManager _instance;
     public static ResourcesManager Instance
     {
@@ -20,7 +22,7 @@ public class ResourcesManager
     public GameObject LoadPanel(string panelName)
     {
         GameObject GO = null;
-        Object obj = Resources.Load("UI/"+panelName);
+        Object obj = Resources.Load(UIPath + panelName);
         if(obj!=null)
         {
             GO = obj as GameObject;
@@ -32,6 +34,17 @@ public class ResourcesManager
     public GameObject Load(string name)
     {
         return null;
+    }
+
+    public AudioClip LoadAudio(string name)
+    {
+        AudioClip clip = null;
+        clip = Resources.Load<AudioClip>(AudioPath + name);
+        if(clip==null)
+        {
+            Debug.LogError("audio not found name :"+name);
+        }
+        return clip;
     }
   
 }

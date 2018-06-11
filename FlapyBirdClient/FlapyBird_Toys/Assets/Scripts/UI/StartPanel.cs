@@ -7,11 +7,13 @@ public class StartPanel : BasePanel
 {
     public void OnReadyHandle()
     {
+        AudioManager.Instance.PlayAudioEffect(AudioType.Swooshing);
         UIManager.Instance.PopPanel(UIType.StartPanel);
         UIManager.Instance.PushPanel(UIType.ReadyPanel);
     }
     public void OnRankHandle()
     {
+        AudioManager.Instance.PlayAudioEffect(AudioType.Swooshing);
         Application.Quit();
     }
 

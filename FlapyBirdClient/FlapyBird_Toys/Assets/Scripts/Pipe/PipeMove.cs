@@ -23,6 +23,7 @@ public class PipeMove : MonoBehaviour {
         {
              sortPipe();
              index++;
+            AudioManager.Instance.PlayAudioEffect(AudioType.Point);
         }
         gameObject.transform.localPosition += Vector3.left * 0.008f;
     }

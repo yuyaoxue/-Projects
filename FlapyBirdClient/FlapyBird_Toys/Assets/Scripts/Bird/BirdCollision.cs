@@ -10,6 +10,7 @@ public class BirdCollision : MonoBehaviour {
         if(collision.gameObject.layer==LayerMask.NameToLayer("Pipe")||collision.gameObject.layer== LayerMask.NameToLayer("Ground"))
         {
             Debug.LogError("与"+collision.gameObject.name +"碰撞了");
+            AudioManager.Instance.PlayAudioEffect(AudioType.Die);
             GameMananager.Instance.GameOver();
         }
     }
