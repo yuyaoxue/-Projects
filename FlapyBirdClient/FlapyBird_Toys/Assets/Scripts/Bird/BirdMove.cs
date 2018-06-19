@@ -9,8 +9,8 @@ public class BirdMove : MonoBehaviour
     void Awake()
     {
         _Rigidbody2D = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
-       
+        _Animator = GetComponent<Animator>();
+        _Collision = GetComponent<BirdCollision>();
     }
     void FixedUpdate()
     {
@@ -28,15 +28,15 @@ public class BirdMove : MonoBehaviour
         {
             if (Time.frameCount % 10 == 0)
             {
-                if (boo)
+                if (IsFall)
                 {
                     _Rigidbody2D.velocity = Vector2.up * 0.05f;
-                    boo = false;
+                    IsFall = false;
                 }
                 else
                 {
                     _Rigidbody2D.velocity = Vector2.down * 0.05f;
-                    boo = true;
+                    IsFall = true;
                 }
             }
         }
@@ -45,23 +45,23 @@ public class BirdMove : MonoBehaviour
     {
         this.gameObject.transform.localPosition = Vector3.zero;
         _Speed = 1f;
-        boo = true;
+        IsFall = true;
     }
 
     public void StartGame()
     {
         _Rigidbody2D.gravityScale = 1;
-        _animator.enabled = true;
+        _Animator.enabled = true;
     }
 
     public void GameOver()
     {
         _Rigidbody2D.gravityScale = 0;
-        _animator.enabled = false;
+        _Animator.enabled = false;
     }
-
+    private BirdCollision _Collision;
     private Rigidbody2D _Rigidbody2D;
-    private Animator _animator;
+    private Animator _Animator;
     private float _Speed;
-    private bool boo;
+    private bool IsFall;
 }

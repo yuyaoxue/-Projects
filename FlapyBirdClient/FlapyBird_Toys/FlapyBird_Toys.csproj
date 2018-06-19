@@ -299,7 +299,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bird\BirdCollision.cs" />
     <Compile Include="Assets\Scripts\Bird\BirdMove.cs" />
-    <Compile Include="Assets\Scripts\FSMStatus\GameMachine\FSMMachine.cs" />
+    <Compile Include="Assets\Scripts\FSMStatus\GameMachine\FSMState.cs" />
+    <Compile Include="Assets\Scripts\FSMStatus\GameMachine\FSMSystem.cs" />
     <Compile Include="Assets\Scripts\Ground\GroundMove.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameMananager.cs" />

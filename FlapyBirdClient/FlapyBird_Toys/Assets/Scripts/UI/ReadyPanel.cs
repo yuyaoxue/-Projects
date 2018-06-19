@@ -6,6 +6,7 @@ public class ReadyPanel : BasePanel
 {
     public override void OnEnter()
     {
+        base.OnEnter();
         GameMananager.Instance.Init();
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PipeMove : MonoBehaviour {
 
-    private void Init()
+    public void Init()
     {
         index = 1;
         this.transform.localPosition = new Vector3(2,0,0);
@@ -44,7 +44,7 @@ public class PipeMove : MonoBehaviour {
 
     public void StartGame()
     {
-        Init();
+       // Init();
     }
 
     public void GameOver()

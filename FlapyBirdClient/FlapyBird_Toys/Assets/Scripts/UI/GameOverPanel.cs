@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameOverPanel : BasePanel {
 
+    public override void OnEnter()
+    {
+        base.OnEnter();
+    }
     public void SetScore()
     {
 
@@ -13,6 +17,7 @@ public class GameOverPanel : BasePanel {
     {
         UIManager.Instance.PopPanel(UIType.GameOverPanel);
         UIManager.Instance.PushPanel(UIType.ReadyPanel);
+
     }
     public void OnRankHandle()
     {

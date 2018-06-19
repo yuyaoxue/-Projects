@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameMananager : MonoBehaviour
 {
     public static GameMananager Instance;
+    public bool IsGameOver = false;
+
     private void Awake()
     {
         Instance = this;
@@ -14,10 +16,10 @@ public class GameMananager : MonoBehaviour
 
     public bool IsStart
     {
-        get { return isStart; }
+        get { return _isStart; }
         private set
         {
-            isStart = value;
+            _isStart = value;
         }
     }
 
@@ -25,12 +27,13 @@ public class GameMananager : MonoBehaviour
     {
         _bird.Init();
         _ground.Init();
+        _Pipe.Init();
+        InitState();
     }
 
     public void StartGame()
     {
         IsStart = true;
-
         _bird.StartGame();
         _Pipe.StartGame();
         _ground.StartGame();
@@ -51,8 +54,11 @@ public class GameMananager : MonoBehaviour
         yield return new WaitForSeconds(1);
         UIManager.Instance.PushPanel(UIType.GameOverPanel);
     }
-
-    private bool isStart = false;
+    private void InitState()
+    {
+        IsGameOver = false;
+    }
+    private bool _isStart = false;
     [SerializeField]
     private BirdMove _bird;
     [SerializeField]
