@@ -13,6 +13,11 @@ public class GameMananager : MonoBehaviour
         IsStart = false;
        
     }
+    private void Start()
+    {
+        _birdSpawn.Init();
+        _backManager.Init();
+    }
 
     public bool IsStart
     {
@@ -25,10 +30,12 @@ public class GameMananager : MonoBehaviour
 
     public void Init()
     {
-        _bird.Init();
-        _ground.Init();
+        _birdSpawn.Init();
         _Pipe.Init();
+        _ground.Init();
+        _backManager.Init();
         InitState();
+        SetBird();
     }
 
     public void StartGame()
@@ -58,11 +65,19 @@ public class GameMananager : MonoBehaviour
     {
         IsGameOver = false;
     }
+
+    public void SetBird()
+    {
+        _bird = _birdSpawn.currentBird;
+    }
     private bool _isStart = false;
-    [SerializeField]
-    private BirdMove _bird;
+    private Bird _bird;
     [SerializeField]
     private PipeMove _Pipe;
     [SerializeField]
     private GroundMove _ground;
+    [SerializeField]
+    private BirdSpawn _birdSpawn;
+    [SerializeField]
+    private BackGroundManager _backManager;
 }

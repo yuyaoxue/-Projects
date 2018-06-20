@@ -14,4 +14,10 @@ public class BirdCollision : MonoBehaviour {
             GameMananager.Instance.IsGameOver = true;
         }
     }
+
+    public void Init()
+    {
+
+    }
+
 }

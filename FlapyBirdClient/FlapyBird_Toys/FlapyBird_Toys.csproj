@@ -297,12 +297,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Bird\Bird.cs" />
     <Compile Include="Assets\Scripts\Bird\BirdCollision.cs" />
     <Compile Include="Assets\Scripts\Bird\BirdMove.cs" />
+    <Compile Include="Assets\Scripts\Bird\BirdSpawn.cs" />
     <Compile Include="Assets\Scripts\FSMStatus\GameMachine\FSMState.cs" />
     <Compile Include="Assets\Scripts\FSMStatus\GameMachine\FSMSystem.cs" />
     <Compile Include="Assets\Scripts\Ground\GroundMove.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\BackGroundManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameMananager.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourcesManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />

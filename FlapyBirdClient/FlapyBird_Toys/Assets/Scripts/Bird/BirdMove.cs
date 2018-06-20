@@ -10,7 +10,6 @@ public class BirdMove : MonoBehaviour
     {
         _Rigidbody2D = GetComponent<Rigidbody2D>();
         _Animator = GetComponent<Animator>();
-        _Collision = GetComponent<BirdCollision>();
     }
     void FixedUpdate()
     {
@@ -59,7 +58,6 @@ public class BirdMove : MonoBehaviour
         _Rigidbody2D.gravityScale = 0;
         _Animator.enabled = false;
     }
-    private BirdCollision _Collision;
     private Rigidbody2D _Rigidbody2D;
     private Animator _Animator;
     private float _Speed;
