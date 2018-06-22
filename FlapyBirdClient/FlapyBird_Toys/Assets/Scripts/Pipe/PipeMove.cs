@@ -7,6 +7,7 @@ public class PipeMove : MonoBehaviour {
     public void Init()
     {
         index = 1;
+        crossPipeCount = 0;
         this.transform.localPosition = new Vector3(2,0,0);
         for (int i = 0; i < pipes.Length; i++)
         {
@@ -23,9 +24,24 @@ public class PipeMove : MonoBehaviour {
         {
              sortPipe();
              index++;
-            AudioManager.Instance.PlayAudioEffect(AudioType.Point);
         }
+        CalculateScore();
         gameObject.transform.localPosition += Vector3.left * 0.008f;
+    }
+    private void CalculateScore()
+    {
+        float this_x = gameObject.transform.localPosition.x;
+        if(this_x<=0)
+        {
+            int temp = Mathf.Abs((int)(this_x / (crossPipeCount + width * 0.5f)));
+            if(temp>=1)
+            {
+                crossPipeCount += temp;
+                AudioManager.Instance.PlayAudioEffect(AudioType.Point);
+                Debug.Log("crossPipeCount:" + crossPipeCount);
+                GameMananager.Instance.SetScore(crossPipeCount);
+            }
+        }
     }
     private void sortPipe()
     {
@@ -55,7 +71,8 @@ public class PipeMove : MonoBehaviour {
     private Transform _startTran;
     private Transform _endTran;
     private float index = 1;
-    private float width = 1;
+    private const float width = 1;
+    private int crossPipeCount = 0;
     [SerializeField]
     private GameObject[] pipes;
 }

@@ -70,6 +70,12 @@ public class GameMananager : MonoBehaviour
     {
         _bird = _birdSpawn.currentBird;
     }
+
+    public void SetScore(int score)
+    {
+
+    }
+
     private bool _isStart = false;
     private Bird _bird;
     [SerializeField]

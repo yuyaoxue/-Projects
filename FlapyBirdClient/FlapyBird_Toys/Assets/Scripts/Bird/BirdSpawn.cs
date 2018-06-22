@@ -19,8 +19,9 @@ public class BirdSpawn : MonoBehaviour {
         Debug.LogError("bird index:"+index);
         for (int i = 0; i < groundCount; i++)
         {
-            _birds[i].gameObject.SetActive(index == i);
+            _birds[i].gameObject.SetActive(false);
         }
+        _birds[index].gameObject.SetActive(true);
         currentBird = _birds[index];
         currentBird.Init();
     }

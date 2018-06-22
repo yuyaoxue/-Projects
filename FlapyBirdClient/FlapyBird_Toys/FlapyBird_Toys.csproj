@@ -312,6 +312,7 @@
     <Compile Include="Assets\Scripts\Pipe\PipeMove.cs" />
     <Compile Include="Assets\Scripts\UI\BasePanel.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\InGamePanel.cs" />
     <Compile Include="Assets\Scripts\UI\ReadyPanel.cs" />
     <Compile Include="Assets\Scripts\UI\StartPanel.cs" />
   </ItemGroup>

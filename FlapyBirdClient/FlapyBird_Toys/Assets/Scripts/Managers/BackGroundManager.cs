@@ -20,8 +20,9 @@ public class BackGroundManager : MonoBehaviour {
 
         for (int i = 0; i < groundCount; i++)
         {
-            grounds[i].SetActive(index==i);
+            grounds[i].SetActive(false);
         }
+        grounds[index].SetActive(true);
     }
 
     private int groundCount;
