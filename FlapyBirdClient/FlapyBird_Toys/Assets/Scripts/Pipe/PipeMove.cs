@@ -11,7 +11,7 @@ public class PipeMove : MonoBehaviour {
         this.transform.localPosition = new Vector3(2,0,0);
         for (int i = 0; i < pipes.Length; i++)
         {
-            pipes[i].transform.localPosition = new Vector3(i * width, 0, 0);
+            pipes[i].transform.localPosition = new Vector3(i * width, Random.Range(Minimum_Y,Maximum_Y), 0);
         }
     }
     // Update is called once per frame
@@ -33,12 +33,11 @@ public class PipeMove : MonoBehaviour {
         float this_x = gameObject.transform.localPosition.x;
         if(this_x<=0)
         {
-            int temp = Mathf.Abs((int)(this_x / (crossPipeCount + width * 0.5f)));
+            int temp = Mathf.Abs((int)(this_x / (crossPipeCount*width + 0.5f)));
             if(temp>=1)
             {
                 crossPipeCount += temp;
-                AudioManager.Instance.PlayAudioEffect(AudioType.Point);
-                Debug.Log("crossPipeCount:" + crossPipeCount);
+                AudioManager.Instance.PlayAudio(AudioType.Point);
                 GameMananager.Instance.SetScore(crossPipeCount);
             }
         }
@@ -53,7 +52,7 @@ public class PipeMove : MonoBehaviour {
             if(i< pipes.Length-1)
               pipes[i] = pipes[i+1];
         }
-        temp.transform.localPosition = new Vector3(_endTran.localPosition.x + width, 0, 0);
+        temp.transform.localPosition = new Vector3(_endTran.localPosition.x + width, Random.Range(Minimum_Y,Maximum_Y), 0);
         pipes[pipes.Length - 1] = temp;
     }
 
@@ -71,8 +70,12 @@ public class PipeMove : MonoBehaviour {
     private Transform _startTran;
     private Transform _endTran;
     private float index = 1;
-    private const float width = 1;
+    private const float width = 1.5f;
     private int crossPipeCount = 0;
     [SerializeField]
     private GameObject[] pipes;
+
+    private const float Maximum_Y = 1f;
+    private const float Minimum_Y = -0.5f;
+
 }

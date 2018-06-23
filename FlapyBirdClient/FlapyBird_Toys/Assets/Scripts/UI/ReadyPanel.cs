@@ -15,5 +15,6 @@ public class ReadyPanel : BasePanel
         AudioManager.Instance.PlayAudioEffect(AudioType.Swooshing);
         UIManager.Instance.PopPanel(UIType.ReadyPanel);
         GameMananager.Instance.StartGame();
+        UIManager.Instance.PushPanel(UIType.InGamePanel);
     }
 }

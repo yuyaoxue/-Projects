@@ -8,11 +8,34 @@ public class GameOverPanel : BasePanel {
     {
         base.OnEnter();
     }
-    public void SetScore()
+    private void OnEnable()
     {
-
+        SetScore();
+    }
+    private void SetScore()
+    {
+        _highestText.text = GameMananager.Instance.scoreMgr.BestScore.ToString();
+        _lastText.text = GameMananager.Instance.scoreMgr.LastScore.ToString();
+        newIcon.gameObject.SetActive(GameMananager.Instance.scoreMgr.IsNewBestScore);
+        SetMedal();
     }
 
+    private void SetMedal()
+    {
+        int score = GameMananager.Instance.scoreMgr.LastScore;
+        int stage = score / stageUnit;
+        int len = _medals.Length;
+        if (stage> len)
+        {
+            stage = len;
+        }
+        for(int i = 0;i< len; i++)
+        {
+            _medals[i].gameObject.SetActive(false);
+        }
+        if(stage>=1)
+          _medals[stage - 1].gameObject.SetActive(true);
+    }
     public void OnStartHandle()
     {
         UIManager.Instance.PopPanel(UIType.GameOverPanel);
@@ -25,7 +48,18 @@ public class GameOverPanel : BasePanel {
     }
 
     [SerializeField]
-    private Button BtnStart;
+    private Button _btnStart;
     [SerializeField]
-    private Button Rank;
+    private Button _rank;
+
+    [SerializeField]
+    private Text _highestText;
+    [SerializeField]
+    private Text _lastText;
+    [SerializeField]
+    private Image newIcon;
+    [SerializeField]
+    private Image[] _medals;
+    private int stageUnit = 10;
+
 }

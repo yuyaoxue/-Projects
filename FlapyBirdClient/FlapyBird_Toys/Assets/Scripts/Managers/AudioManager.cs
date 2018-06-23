@@ -6,6 +6,7 @@ public class AudioManager:MonoBehaviour
 {
     private Dictionary<string, AudioClip> _audioDict;
     private AudioSource AudioEffectSource;
+    private AudioSource AudioSource;
 
     public static AudioManager Instance;
 
@@ -17,6 +18,11 @@ public class AudioManager:MonoBehaviour
     public void PlayAudioEffect(string soundName)
     {
         PlaySound(AudioEffectSource, soundName, 0.5f);
+    }
+
+    public void PlayAudio(string soundName)
+    {
+        PlaySound(AudioSource, soundName, 0.5f);
     }
 
     private void PlaySound(AudioSource audioSource,string soundName,float volume,bool loop = false)
@@ -51,6 +57,7 @@ public class AudioManager:MonoBehaviour
         _audioDict = new Dictionary<string, AudioClip>();
         GameObject audioSourceGO = new GameObject("AudioSource(GameObject)");
         AudioEffectSource = audioSourceGO.AddComponent<AudioSource>();
+        AudioSource = audioSourceGO.AddComponent<AudioSource>();
     }
 }
 

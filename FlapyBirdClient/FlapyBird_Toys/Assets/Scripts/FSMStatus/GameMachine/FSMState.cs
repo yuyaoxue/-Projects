@@ -11,19 +11,19 @@ public abstract class FSMState
     {
         if(trans==Transition.NullTransition)
         {
-            Debug.LogError("trans state is NullTranssition");
+          //  Debug.LogError("trans state is NullTranssition");
             return;
         }
 
         if(id == StateID.NullStateID)
         {
-            Debug.LogError("id is NullStateID");
+         //   Debug.LogError("id is NullStateID");
             return;
         }
 
         if(maps.ContainsKey(trans))
         {
-            Debug.LogError("states already  has "+ trans);
+          //  Debug.LogError("states already  has "+ trans);
             return;
         }
 

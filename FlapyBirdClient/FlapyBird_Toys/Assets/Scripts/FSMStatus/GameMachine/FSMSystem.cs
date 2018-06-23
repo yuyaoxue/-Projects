@@ -33,7 +33,7 @@ public class FSMSystem{
         {
             if(state.ID == s.ID)
             {
-                Debug.LogError("state is exist");
+               // Debug.LogError("state is exist");
             }
         }
 
@@ -44,7 +44,7 @@ public class FSMSystem{
     {
         if (id == StateID.NullStateID)
         {
-            Debug.LogError("id is NullStateID");
+          //  Debug.LogError("id is NullStateID");
             return;
         }
 
@@ -63,14 +63,14 @@ public class FSMSystem{
     {
         if (trans == Transition.NullTransition)
         {
-            Debug.LogError("trans is NullTransition");
+          //  Debug.LogError("trans is NullTransition");
             return;
         }
 
         StateID id = currentState.GetOutputState(trans);
         if (id == StateID.NullStateID)
         {
-            Debug.LogError("id is nullStateID");
+          //  Debug.LogError("id is nullStateID");
             return;
         }
 

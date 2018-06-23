@@ -16,7 +16,7 @@ public class BirdSpawn : MonoBehaviour {
     private void RandowmBackGround()
     {
         int index = Random.Range(0, groundCount);
-        Debug.LogError("bird index:"+index);
+       // Debug.LogError("bird index:"+index);
         for (int i = 0; i < groundCount; i++)
         {
             _birds[i].gameObject.SetActive(false);

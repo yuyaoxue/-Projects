@@ -308,6 +308,7 @@
     <Compile Include="Assets\Scripts\Managers\BackGroundManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameMananager.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourcesManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Pipe\PipeMove.cs" />
     <Compile Include="Assets\Scripts\UI\BasePanel.cs" />

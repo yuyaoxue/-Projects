@@ -18,6 +18,10 @@ public class BirdMove : MonoBehaviour
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 _Speed += 1;
+                if(_Speed>=birdFlyMaximum_Y)
+                {
+                    _Speed = 0;
+                }
                 _Rigidbody2D.velocity = Vector2.up * _Speed;
                 AudioManager.Instance.PlayAudioEffect(AudioType.Wing);
             }
@@ -62,4 +66,6 @@ public class BirdMove : MonoBehaviour
     private Animator _Animator;
     private float _Speed;
     private bool IsFall;
+
+    private const float birdFlyMaximum_Y = 2.4f;
 }

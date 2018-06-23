@@ -16,7 +16,7 @@ public class BackGroundManager : MonoBehaviour {
     private void RandowmBackGround()
     {
         int index = Random.Range(0, groundCount);
-        Debug.LogError("ground index:" + index);
+        //Debug.LogError("ground index:" + index);
 
         for (int i = 0; i < groundCount; i++)
         {

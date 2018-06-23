@@ -96,7 +96,6 @@ public enum UIType
     None,
     GameOverPanel,
     ReadyPanel,
-    ScorePanel,
     StartPanel,
-    ButtonPanel,
+    InGamePanel,
 }

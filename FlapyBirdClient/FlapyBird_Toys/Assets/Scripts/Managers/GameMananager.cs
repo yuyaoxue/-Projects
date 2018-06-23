@@ -11,12 +11,14 @@ public class GameMananager : MonoBehaviour
     {
         Instance = this;
         IsStart = false;
-       
+        scoreMgr = new ScoreManager();
     }
+   
     private void Start()
     {
         _birdSpawn.Init();
         _backManager.Init();
+
     }
 
     public bool IsStart
@@ -30,6 +32,7 @@ public class GameMananager : MonoBehaviour
 
     public void Init()
     {
+        scoreMgr.InitScores();
         _birdSpawn.Init();
         _Pipe.Init();
         _ground.Init();
@@ -58,6 +61,7 @@ public class GameMananager : MonoBehaviour
 
     IEnumerator OpenGameOverPanel()
     {
+        UIManager.Instance.PopPanel(UIType.InGamePanel);
         yield return new WaitForSeconds(1);
         UIManager.Instance.PushPanel(UIType.GameOverPanel);
     }
@@ -73,7 +77,7 @@ public class GameMananager : MonoBehaviour
 
     public void SetScore(int score)
     {
-
+        scoreMgr.CurrentScore = score;
     }
 
     private bool _isStart = false;
@@ -86,4 +90,5 @@ public class GameMananager : MonoBehaviour
     private BirdSpawn _birdSpawn;
     [SerializeField]
     private BackGroundManager _backManager;
+    public ScoreManager scoreMgr;
 }
