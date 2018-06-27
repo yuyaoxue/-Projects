@@ -80,6 +80,16 @@ public class GameMananager : MonoBehaviour
         scoreMgr.CurrentScore = score;
     }
 
+    public void DownHandle()
+    {
+        _bird.DownHandle();
+    }
+
+    public void UpHandle()
+    {
+        _bird.UpHandle();
+    }
+
     private bool _isStart = false;
     private Bird _bird;
     [SerializeField]

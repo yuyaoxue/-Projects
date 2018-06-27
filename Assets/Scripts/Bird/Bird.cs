@@ -32,6 +32,15 @@ public class Bird : MonoBehaviour {
         }
     }
 
+    public void DownHandle()
+    {
+        _move.DownHandle();
+    }
+
+    public void UpHandle()
+    {
+        _move.UpHandle();
+    }
     private BirdMove _move;
     private BirdCollision _collision;
 }

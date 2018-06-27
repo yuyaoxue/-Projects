@@ -17,15 +17,9 @@ public class BirdMove : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                _Speed += 1;
-                if(_Speed>=birdFlyMaximum_Y)
-                {
-                    _Speed = 0;
-                }
-                _Rigidbody2D.velocity = Vector2.up * _Speed;
-                AudioManager.Instance.PlayAudioEffect(AudioType.Wing);
+                DownHandle();
             }
-            _Speed = 1;
+            UpHandle();
         }
         else
         {
@@ -61,6 +55,23 @@ public class BirdMove : MonoBehaviour
     {
         _Rigidbody2D.gravityScale = 0;
         _Animator.enabled = false;
+    }
+
+
+    public void DownHandle()
+    {
+        _Speed += 1;
+        if (_Speed >= birdFlyMaximum_Y)
+        {
+            _Speed = 0;
+        }
+        _Rigidbody2D.velocity = Vector2.up * _Speed;
+        AudioManager.Instance.PlayAudioEffect(AudioType.Wing);
+    }
+
+    public void UpHandle()
+    {
+        _Speed = 1;
     }
     private Rigidbody2D _Rigidbody2D;
     private Animator _Animator;
