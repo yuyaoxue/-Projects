@@ -23,7 +23,13 @@ public class Bird : MonoBehaviour {
             _move.StartGame();
         }
     }
-
+    public void Ready()
+    {
+        if(_move!=null)
+        {
+            _move.Ready();
+        }
+    }
     public void GameOver()
     {
         if (_move != null)

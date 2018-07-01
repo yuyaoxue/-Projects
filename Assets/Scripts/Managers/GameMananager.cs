@@ -51,6 +51,10 @@ public class GameMananager : MonoBehaviour
         _ground.StartGame();
 
     }
+    public void Ready()
+    {
+        _bird.Ready();
+    }
 
     public void GameOver()
     {

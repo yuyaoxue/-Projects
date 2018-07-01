@@ -57,10 +57,13 @@ public class BirdMove : MonoBehaviour
         _Rigidbody2D.gravityScale = 1;
         _Animator.enabled = true;
     }
+    public void Ready()
+    {
+       _Rigidbody2D.gravityScale = 0;
+    }
 
     public void GameOver()
     {
-       // _Rigidbody2D.gravityScale = 1;
         _Animator.enabled = false;
     }
 

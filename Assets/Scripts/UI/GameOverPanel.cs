@@ -38,6 +38,7 @@ public class GameOverPanel : BasePanel {
     }
     public void OnStartHandle()
     {
+        GameMananager.Instance.Ready();
         UIManager.Instance.PopPanel(UIType.GameOverPanel);
         UIManager.Instance.PushPanel(UIType.ReadyPanel);
 
