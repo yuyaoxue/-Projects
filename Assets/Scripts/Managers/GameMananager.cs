@@ -18,6 +18,7 @@ public class GameMananager : MonoBehaviour
     {
         _birdSpawn.Init();
         _backManager.Init();
+        _pipeManager.Init();
 
     }
 
@@ -44,6 +45,7 @@ public class GameMananager : MonoBehaviour
     public void StartGame()
     {
         IsStart = true;
+        _pipeManager.StartGame();
         _bird.StartGame();
         _Pipe.StartGame();
         _ground.StartGame();
@@ -53,10 +55,12 @@ public class GameMananager : MonoBehaviour
     public void GameOver()
     {
         IsStart = false;
+        _pipeManager.GameOver();
         _bird.GameOver();
         _Pipe.GameOver();
         _ground.GameOver();
         StartCoroutine(OpenGameOverPanel());
+
     }
 
     IEnumerator OpenGameOverPanel()
@@ -100,5 +104,8 @@ public class GameMananager : MonoBehaviour
     private BirdSpawn _birdSpawn;
     [SerializeField]
     private BackGroundManager _backManager;
+    [SerializeField]
+    private PipeManager _pipeManager;
+
     public ScoreManager scoreMgr;
 }

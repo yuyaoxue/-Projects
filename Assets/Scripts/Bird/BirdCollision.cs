@@ -10,7 +10,7 @@ public class BirdCollision : MonoBehaviour {
             (collision.gameObject.layer==LayerMask.NameToLayer("Pipe")||
             collision.gameObject.layer== LayerMask.NameToLayer("Ground")))
         {
-            AudioManager.Instance.PlayAudioEffect(AudioType.Die);
+            AudioManager.Instance.PlayAudio(AudioType.Die);
             GameMananager.Instance.GameOver();
             GameMananager.Instance.IsGameOver = true;
         }

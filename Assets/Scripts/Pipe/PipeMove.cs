@@ -26,7 +26,7 @@ public class PipeMove : MonoBehaviour {
              index++;
         }
         CalculateScore();
-        gameObject.transform.localPosition += Vector3.left * 0.008f;
+        gameObject.transform.localPosition += Vector3.left * 0.01f;
     }
     private void CalculateScore()
     {
@@ -55,6 +55,7 @@ public class PipeMove : MonoBehaviour {
         temp.transform.localPosition = new Vector3(_endTran.localPosition.x + width, Random.Range(Minimum_Y,Maximum_Y), 0);
         pipes[pipes.Length - 1] = temp;
     }
+
 
 
     public void StartGame()

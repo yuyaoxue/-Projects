@@ -25,6 +25,8 @@ public class BirdSpawn : MonoBehaviour {
         currentBird = _birds[index];
         currentBird.Init();
     }
+
+    [HideInInspector]
     public Bird currentBird;
     private int groundCount;
     [SerializeField]

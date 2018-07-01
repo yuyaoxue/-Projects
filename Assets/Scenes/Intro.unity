@@ -402,6 +402,7 @@ MonoBehaviour:
   _ground: {fileID: 1781248956}
   _birdSpawn: {fileID: 859864549}
   _backManager: {fileID: 803563301}
+  _pipeManager: {fileID: 1720485866}
 --- !u!114 &319690008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1429,6 +1430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720485864}
   - component: {fileID: 1720485865}
+  - component: {fileID: 1720485866}
   m_Layer: 0
   m_Name: pipes
   m_TagString: Untagged
@@ -1471,6 +1473,17 @@ MonoBehaviour:
   - {fileID: 1698042576}
   - {fileID: 642994006}
   - {fileID: 506182688}
+--- !u!114 &1720485866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720485863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6775bbefd306c45bcc2917a7c1e81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1743302018
 Prefab:
   m_ObjectHideFlags: 0

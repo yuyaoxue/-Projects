@@ -36,7 +36,7 @@ public class GroundMove : MonoBehaviour
             grounds[grounds.Length - 1] = temp;
             index++;
         }
-        gameObject.transform.localPosition += Vector3.left * 0.008f;
+        gameObject.transform.localPosition += Vector3.left * 0.01f;
     }
 
     public void StartGame()

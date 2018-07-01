@@ -23,18 +23,25 @@ public class BirdMove : MonoBehaviour
         }
         else
         {
-            if (Time.frameCount % 10 == 0)
+            if(!GameMananager.Instance.IsGameOver)
             {
-                if (IsFall)
+                if (Time.frameCount % 10 == 0)
                 {
-                    _Rigidbody2D.velocity = Vector2.up * 0.05f;
-                    IsFall = false;
+                    if (IsFall)
+                    {
+                        _Rigidbody2D.AddForce(Vector2.up * 0.05f);
+                        IsFall = false;
+                    }
+                    else
+                    {
+                        _Rigidbody2D.AddForce(Vector2.down * 0.05f);
+                        IsFall = true;
+                    }
                 }
-                else
-                {
-                    _Rigidbody2D.velocity = Vector2.down * 0.05f;
-                    IsFall = true;
-                }
+            }
+            else
+            {
+                UpHandle();
             }
         }
     }
@@ -53,7 +60,7 @@ public class BirdMove : MonoBehaviour
 
     public void GameOver()
     {
-        _Rigidbody2D.gravityScale = 0;
+       // _Rigidbody2D.gravityScale = 1;
         _Animator.enabled = false;
     }
 
